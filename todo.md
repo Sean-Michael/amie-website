@@ -45,5 +45,6 @@
 - [ ] Add image upload to S3 (or locally)
 - [ ] Add search by tag or medium
 - [ ] Add gallery filtering by year or medium
+- [ ] Admin panel to feature artworks, manage collections, etc.
 
 ---

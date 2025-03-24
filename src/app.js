@@ -22,12 +22,18 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '../public')));
 
-// View engine setup
-app.engine('hbs', exphbs.engine({
+// Define the eq helper
+const hbs = exphbs.create({
   extname: 'hbs',
   defaultLayout: 'main',
-  layoutsDir: path.join(__dirname, 'views/layouts')
-}));
+  layoutsDir: path.join(__dirname, 'views/layouts'),
+  helpers: {
+    eq: (a, b) => a === b
+  }
+});
+
+// View engine setup
+app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views'));
 

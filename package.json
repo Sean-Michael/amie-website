@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Sean-Michael/amie-website#readme",
   "dependencies": {
+    "@heroicons/react": "^2.2.0",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "express-handlebars": "^8.0.1",

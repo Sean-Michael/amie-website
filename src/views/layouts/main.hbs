@@ -4,15 +4,40 @@
   <meta charset="UTF-8">
   <title>{{title}}</title>
   <link href="/css/output.css" rel="stylesheet">
+  <script src="/js/navbar.js" defer></script>
 </head>
 <body class="bg-white text-gray-900 font-sans">
-  <header class="p-4 border-b">
-    <nav class="flex gap-4">
-      <a href="/" class="text-blue-600 hover:underline">Home</a>
-      <a href="/bio" class="hover:underline">Bio</a>
-      <a href="/works" class="hover:underline">Works</a>
-      <a href="/gallery" class="hover:underline">Gallery</a>
+  <header class="navbar bg-white text-gray-800 shadow-md">
+    <nav class="container mx-auto flex justify-between items-center py-4 px-6">
+      <!-- Logo -->
+      <a href="/" class="text-2xl font-bold flex items-center gap-2">
+        <img src="/images/icon.jpg" alt="Logo" class="w-8 h-8">
+        Amie
+      </a>
+
+      <!-- Navigation Links -->
+      <div class="hidden md:flex gap-8 items-center">
+        <a href="/" class="navbar-link {{#if (eq title 'Home')}}navbar-link-active{{/if}}">Home</a>
+        <a href="/bio" class="navbar-link {{#if (eq title 'Bio')}}navbar-link-active{{/if}}">Bio</a>
+        <a href="/works" class="navbar-link {{#if (eq title 'Works')}}navbar-link-active{{/if}}">Works</a>
+        <a href="/gallery" class="navbar-link {{#if (eq title 'Gallery')}}navbar-link-active{{/if}}">Gallery</a>
+      </div>
+
+      <!-- Mobile Menu Icon -->
+      <button id="menu-toggle" class="md:hidden text-gray-800 focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white text-gray-800 shadow-md">
+      <a href="/" class="navbar-link {{#if (eq title 'Home')}}navbar-link-active{{/if}}">Home</a>
+      <a href="/bio" class="navbar-link {{#if (eq title 'Bio')}}navbar-link-active{{/if}}">Bio</a>
+      <a href="/works" class="navbar-link {{#if (eq title 'Works')}}navbar-link-active{{/if}}">Works</a>
+      <a href="/gallery" class="navbar-link {{#if (eq title 'Gallery')}}navbar-link-active{{/if}}">Gallery</a>
+    </div>
   </header>
 
   <main class="p-4">

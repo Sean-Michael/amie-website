@@ -29,11 +29,19 @@ p {
 }
 
 a {
-  @apply text-blue-600 hover:text-blue-800 underline;
+  @apply text-blue-600 font-medium transition-all duration-200;
+}
+
+a:hover {
+  @apply text-blue-800 underline;
 }
 
 button {
   @apply bg-blue-600 text-white font-medium py-2 px-4 rounded-lg shadow-md hover:bg-blue-700 transition-all;
+}
+
+.button {
+  @apply inline-block bg-gray-800 text-white font-medium py-2 px-6 rounded-lg shadow hover:bg-gray-700 transition-all;
 }
 
 /* Layout helpers */
@@ -42,13 +50,58 @@ button {
 }
 
 .card {
-  @apply bg-white rounded-lg shadow-lg p-6 mb-6;
+  @apply bg-white shadow-md rounded-lg overflow-hidden;
+}
+
+.card-title {
+  @apply text-xl font-bold text-gray-800;
+}
+
+.card-text {
+  @apply text-gray-600;
+}
+
+.card-link {
+  @apply text-gray-800 font-medium hover:underline;
 }
 
 .navbar {
-  @apply bg-white shadow-md py-4 px-6 flex justify-between items-center;
+  @apply bg-white shadow-md py-4 px-6 flex justify-between items-center shadow-lg;
+  @apply shadow-lg;
+}
+
+#mobile-menu {
+  @apply md:hidden;
+}
+
+#mobile-menu a {
+  @apply block py-2 px-4 hover:bg-gray-700;
 }
 
 .footer {
   @apply bg-gray-800 text-gray-200 py-6 text-center;
+}
+
+.navbar-link {
+  @apply text-gray-800 hover:text-gray-500 transition-all;
+}
+
+.navbar-link-active {
+  @apply font-bold underline;
+}
+
+.navbar-link-home {
+  @apply bg-blue-600 hover:bg-blue-700;
+}
+
+.navbar-link-gallery {
+  @apply bg-green-600 hover:bg-green-700;
+}
+
+.navbar-link-works {
+  @apply bg-yellow-600 hover:bg-yellow-700;
+}
+
+.navbar-link-bio {
+  @apply bg-red-600 hover:bg-red-700;
 }
