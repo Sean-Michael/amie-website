@@ -1,0 +1,18 @@
+<section class="container mx-auto mt-8">
+  <div class="text-center mb-12">
+    <h1 class="text-4xl md:text-5xl font-bold text-gray-800">{{collection.title}}</h1>
+    <p class="text-lg text-gray-600 mt-4">{{collection.description}}</p>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    {{#each artworks}}
+      <div class="card">
+        <img src="{{this.image}}" alt="{{this.title}}" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="card-title">{{this.title}}</h3>
+          <p class="card-text">{{this.medium}} - {{this.year}}</p>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</section>

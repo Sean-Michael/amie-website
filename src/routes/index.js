@@ -1,13 +1,15 @@
 const express = require('express');
 const router = express.Router();
+const Collection = require('../models/collection');
 
-router.get('/', (req, res) => {
-  const featuredWorks = [
-    { id: 1, title: 'Abstract Landscape', medium: 'Oil on Canvas', year: 2023, image: '/images/landscape.jpeg' },
-    { id: 2, title: 'Modern Sculpture', medium: 'Bronze', year: 2022, image: '/images/sculpture.jpeg' },
-    { id: 3, title: 'Digital Dreams', medium: 'Digital Art', year: 2024, image: '/images/dreams.jpeg' },
-  ];
-  res.render('index', { title: 'Home', featuredWorks });
+router.get('/', async (req, res) => {
+  try {
+    const collections = await Collection.find().limit(3); // Fetch 3 featured collections
+    res.render('index', { title: 'Home', collections });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Server Error');
+  }
 });
 
 module.exports = router;

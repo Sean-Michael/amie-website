@@ -20,10 +20,10 @@
 
 - [x] Configure Handlebars with layout system
 - [x] Set up TailwindCSS in public styles
-- [ ] Create views:
+- [x] Create views:
   - [ ] `index.hbs` (home)
   - [ ] `bio.hbs`
-  - [ ] `works.hbs` (thesis/process)
+  - [ ] `collections.hbs` (groupings of works)
   - [ ] `gallery.hbs` (grid of artwork)
   - [ ] `work.hbs` (single piece view)
 

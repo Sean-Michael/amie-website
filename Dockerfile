@@ -1,5 +1,5 @@
 # Use the official Node.js LTS image
-FROM node:18
+FROM node:latest
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -18,4 +18,4 @@ RUN npx tailwindcss -i ./public/css/styles.css -o ./public/css/output.css --mini
 EXPOSE 3000
 
 # Start the app
-CMD ["npm", "start"]
+CMD ["npm", "run", "dev"]

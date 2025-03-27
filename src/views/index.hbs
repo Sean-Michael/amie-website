@@ -1,25 +1,24 @@
-<!-- filepath: /Users/smr/Documents/GitHub/amie-website/src/views/index.hbs -->
 {{!-- Home Page Template --}}
 <section class="container mx-auto mt-8">
   <div class="text-center">
     <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800">Welcome to Amie's Portfolio</h1>
     <p class="text-lg text-gray-600 mb-6">
-      Explore the works, biography, and creative journey of Amie.
+      Explore the collections, biography, and creative journey of Amie.
     </p>
-    <a href="/works" class="button">View Works</a>
+    <a href="/collections" class="button">View Collections</a>
   </div>
 </section>
 
 <section class="container mx-auto mt-12">
-  <h2 class="text-3xl font-bold mb-6 text-gray-800">Featured Works</h2>
+  <h2 class="text-3xl font-bold mb-6 text-gray-800">Featured Collections</h2>
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-    {{#each featuredWorks}}
+    {{#each collections}}
       <div class="card">
-        <img src="{{this.image}}" alt="{{this.title}}" class="w-full h-48 object-cover">
+        <img src="{{this.coverImage}}" alt="{{this.title}}" class="w-full h-48 object-cover">
         <div class="p-4">
           <h3 class="card-title">{{this.title}}</h3>
-          <p class="card-text">{{this.medium}} - {{this.year}}</p>
-          <a href="/works/{{this.id}}" class="card-link">View Details</a>
+          <p class="card-text">{{this.description}}</p>
+          <a href="/collections/{{this._id}}" class="card-link">View Collection</a>
         </div>
       </div>
     {{/each}}
